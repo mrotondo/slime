@@ -7,6 +7,8 @@
 //
 
 #import "SLViewController.h"
+#import <Spiral/SPGeometricPrimitives.h>
+#import <Spiral/SPEffectsManager.h>
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
@@ -167,6 +169,9 @@ GLfloat gCubeVertexData[216] =
     glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, 24, BUFFER_OFFSET(12));
     
     glBindVertexArrayOES(0);
+    
+    [SPEffectsManager initializeSharedEffectsManager];
+    [SPGeometricPrimitives initializeSharedGeometricPrimitives];
 }
 
 - (void)tearDownGL

@@ -23,6 +23,7 @@
 		D5BAD44616D0528900B38811 /* SLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD44516D0528900B38811 /* SLViewController.m */; };
 		D5BAD44916D0528900B38811 /* SLViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD44716D0528900B38811 /* SLViewController_iPhone.xib */; };
 		D5BAD44C16D0528900B38811 /* SLViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD44A16D0528900B38811 /* SLViewController_iPad.xib */; };
+		D5BAD46216D0541800B38811 /* libSpiral iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BAD45A16D0531F00B38811 /* libSpiral iOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = D5E1EDCE158365B800DBE86E;
 			remoteInfo = "Spiral OS X";
+		};
+		D5BAD46016D0540F00B38811 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5BAD45316D0531F00B38811 /* Spiral.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D5E1ED9A158365AC00DBE86E;
+			remoteInfo = "Spiral iOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -79,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5BAD46216D0541800B38811 /* libSpiral iOS.a in Frameworks */,
 				D5BAD42516D0528900B38811 /* UIKit.framework in Frameworks */,
 				D5BAD42716D0528900B38811 /* Foundation.framework in Frameworks */,
 				D5BAD42916D0528900B38811 /* CoreGraphics.framework in Frameworks */,
@@ -182,6 +191,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D5BAD46116D0540F00B38811 /* PBXTargetDependency */,
 			);
 			name = Slime;
 			productName = Slime;
@@ -276,6 +286,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D5BAD46116D0540F00B38811 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Spiral iOS";
+			targetProxy = D5BAD46016D0540F00B38811 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		D5BAD43116D0528900B38811 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -367,6 +385,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slime/Slime-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../Submodules/Spiral/Spiral;
 				INFOPLIST_FILE = "Slime/Slime-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -378,6 +397,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Slime/Slime-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../Submodules/Spiral/Spiral;
 				INFOPLIST_FILE = "Slime/Slime-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
