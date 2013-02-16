@@ -1,0 +1,3 @@
+[submodule "Submodules/Spiral"]
+	path = Submodules/Spiral
+	url = git@github.com:mrotondo/Spiral.git
