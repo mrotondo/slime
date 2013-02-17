@@ -11,6 +11,9 @@
 
 @interface SLSlimeWorld : NSObject
 
+@property (nonatomic) GLKVector2 currentViewportCenter;
+@property (nonatomic) float currentViewportZoom;
+
 - (GLKVector2)locationInWorldForNormalizedScreenPoint:(CGPoint)normalizedScreenPoint aspectRatio:(float)aspectRatio;
 - (void)startSlimerAtPoint:(GLKVector2)worldPoint;
 - (void)finishSlimerAtPoint:(GLKVector2)worldPoint;

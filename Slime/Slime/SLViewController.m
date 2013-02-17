@@ -13,10 +13,11 @@
 #import "SLSlimerCreationGestureRecognizer.h"
 #import "SLSlimeWorld.h"
 
-@interface SLViewController ()
+@interface SLViewController () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) EAGLContext *context;
 @property (nonatomic, strong) GLKBaseEffect *effect;
+@property (nonatomic, strong) SLSlimerCreationGestureRecognizer *drawGestureRecognizer;
 @property (nonatomic, strong) SLSlimeWorld *world;
 
 - (void)setupGL;
@@ -43,9 +44,21 @@
     
     [self setupGL];
     
-    SLSlimerCreationGestureRecognizer *gestureRecognizer = [[SLSlimerCreationGestureRecognizer alloc] initWithTarget:self
-                                                                                                              action:@selector(handleSlimerCreation:)];
-    [self.view addGestureRecognizer:gestureRecognizer];
+    self.drawGestureRecognizer = [[SLSlimerCreationGestureRecognizer alloc] initWithTarget:self
+                                                                                    action:@selector(handleSlimerCreation:)];
+    self.drawGestureRecognizer.delegate = self;
+    [self.view addGestureRecognizer:self.drawGestureRecognizer];
+    
+    UIPinchGestureRecognizer *pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
+    pinchGestureRecognizer.delegate = self;
+    [pinchGestureRecognizer requireGestureRecognizerToFail:self.drawGestureRecognizer];
+    [self.view addGestureRecognizer:pinchGestureRecognizer];
+    
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+    panGestureRecognizer.minimumNumberOfTouches = 2;
+    panGestureRecognizer.delegate = self;
+    [panGestureRecognizer requireGestureRecognizerToFail:self.drawGestureRecognizer];
+    [self.view addGestureRecognizer:panGestureRecognizer];
     
     self.world = [[SLSlimeWorld alloc] init];
 }
@@ -110,6 +123,38 @@
             break;
         default:
             break;
+    }
+}
+
+- (void)handlePinch:(UIPinchGestureRecognizer *)gestureRecognizer
+{
+    self.world.currentViewportZoom *= gestureRecognizer.scale;
+    [gestureRecognizer setScale:1];
+}
+
+- (void)handlePan:(UIPanGestureRecognizer *)gestureRecognizer
+{
+    CGPoint translation = [gestureRecognizer translationInView:self.view];
+    CGPoint normalizedTranslationInView = CGPointMake(translation.x / self.view.bounds.size.width,
+                                                      -1.0 * translation.y / self.view.bounds.size.height);
+    float aspectRatio = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
+    CGPoint aspectRatioNormalizedTranslationInView = CGPointMake(normalizedTranslationInView.x * aspectRatio, normalizedTranslationInView.y);
+    self.world.currentViewportCenter = GLKVector2Add(self.world.currentViewportCenter,
+                                                     GLKVector2Make(aspectRatioNormalizedTranslationInView.x, aspectRatioNormalizedTranslationInView.y));
+    [gestureRecognizer setTranslation:CGPointZero inView:self.view];
+}
+
+#pragma mark - UIGestureRecognizerDelegate methods
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    if ([gestureRecognizer isEqual:self.drawGestureRecognizer] || [otherGestureRecognizer isEqual:self.drawGestureRecognizer])
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
     }
 }
 

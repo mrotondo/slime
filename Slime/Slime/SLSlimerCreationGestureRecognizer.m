@@ -36,6 +36,12 @@
         return;
     }
     
+    if (!self.firstTouch && [touches count] > 1)
+    {
+        self.state = UIGestureRecognizerStateFailed;
+        return;
+    }
+    
     self.firstTouch = [touches anyObject];
     self.touchLocation = [self.firstTouch locationInView:self.view];
     self.state = UIGestureRecognizerStateBegan;

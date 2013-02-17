@@ -7,13 +7,11 @@
 //
 
 #import "SLSlimeWorld.h"
-#import "SLSlimer.h"
 #import <Spiral/SPEffectsManager.h>
+#import <Spiral/SPGeometricPrimitives.h>
+#import "SLSlimer.h"
 
 @interface SLSlimeWorld ()
-
-@property (nonatomic) GLKVector2 currentViewportCenter;
-@property (nonatomic) float currentViewportZoom;
 
 @property (nonatomic, strong) NSMutableSet *slimers;
 @property (nonatomic, strong) SLSlimer *currentSlimer;
@@ -39,7 +37,7 @@
     float viewportDimension = 2.0 / self.currentViewportZoom;
     GLKVector2 viewportSize = GLKVector2Make(viewportDimension * aspectRatio, viewportDimension);
     GLKVector2 centeredTouchLocationInViewport = GLKVector2Multiply(GLKVector2SubtractScalar(GLKVector2Make(normalizedScreenPoint.x, normalizedScreenPoint.y),  0.5), viewportSize);
-    GLKVector2 touchLocationInWorld = GLKVector2Add(centeredTouchLocationInViewport, self.currentViewportCenter);
+    GLKVector2 touchLocationInWorld = GLKVector2Subtract(centeredTouchLocationInViewport, GLKVector2DivideScalar(self.currentViewportCenter, self.currentViewportZoom));
     return touchLocationInWorld;
 }
 
@@ -62,6 +60,8 @@
     modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, self.currentViewportCenter.x, self.currentViewportCenter.y, 0.0);
     modelViewMatrix = GLKMatrix4Scale(modelViewMatrix, self.currentViewportZoom, self.currentViewportZoom, 1.0);
     [SPEffectsManager sharedEffectsManager].modelViewMatrix = modelViewMatrix;
+    
+    [SPGeometricPrimitives drawCircleWithColor:GLKVector4Make(1, 1, 1, 1) andModelViewMatrix:modelViewMatrix];
     
     for (SLSlimer *slimer in self.slimers)
     {
