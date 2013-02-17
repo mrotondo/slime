@@ -46,13 +46,13 @@
 - (void)startSlimerAtPoint:(GLKVector2)worldPoint
 {
     self.currentSlimer = [[SLSlimer alloc] init];
-    self.currentSlimer.firstPoint = worldPoint;
+    [self.currentSlimer addRearPoint:worldPoint];
     [self.slimers addObject:self.currentSlimer];
 }
 
 - (void)finishSlimerAtPoint:(GLKVector2)worldPoint
 {
-    self.currentSlimer.lastPoint = worldPoint;
+    [self.currentSlimer addFrontPoint:worldPoint];
     self.currentSlimer = nil;
 }
 

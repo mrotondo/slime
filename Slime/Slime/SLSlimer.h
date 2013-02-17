@@ -11,8 +11,8 @@
 
 @interface SLSlimer : NSObject
 
-@property (nonatomic) GLKVector2 firstPoint;
-@property (nonatomic) GLKVector2 lastPoint;
+- (void)addRearPoint:(GLKVector2)rearPoint;
+- (void)addFrontPoint:(GLKVector2)frontPoint;
 
 - (void)render;
 

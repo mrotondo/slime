@@ -9,6 +9,7 @@
 #import "SLViewController.h"
 #import <Spiral/SPGeometricPrimitives.h>
 #import <Spiral/SPEffectsManager.h>
+#import <Spiral/SPAnimation.h>
 #import "SLSlimerCreationGestureRecognizer.h"
 #import "SLSlimeWorld.h"
 
@@ -29,6 +30,7 @@
 {
     [super viewDidLoad];
     
+    self.preferredFramesPerSecond = 60;
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
 
     if (!self.context) {
@@ -37,7 +39,7 @@
     
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
-    view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+    view.drawableDepthFormat = GLKViewDrawableDepthFormatNone;
     
     [self setupGL];
     
@@ -115,6 +117,8 @@
 
 - (void)update
 {
+    [SPAnimation updateAnimationsWithTimeElapsed:self.timeSinceLastUpdate];
+    
     float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
 
     GLKMatrix4 orthoMatrix = GLKMatrix4MakeOrtho(-aspect, aspect, -1.0, 1.0, -1.0, 1.0);
