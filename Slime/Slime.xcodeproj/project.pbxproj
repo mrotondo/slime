@@ -24,6 +24,20 @@
 		D5BAD44916D0528900B38811 /* SLViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD44716D0528900B38811 /* SLViewController_iPhone.xib */; };
 		D5BAD44C16D0528900B38811 /* SLViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD44A16D0528900B38811 /* SLViewController_iPad.xib */; };
 		D5BAD46216D0541800B38811 /* libSpiral iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BAD45A16D0531F00B38811 /* libSpiral iOS.a */; };
+		D5BAD47416D0551700B38811 /* soft_particle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46416D0551700B38811 /* soft_particle.fsh */; };
+		D5BAD47516D0551700B38811 /* soft_particle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46516D0551700B38811 /* soft_particle.vsh */; };
+		D5BAD47616D0551700B38811 /* color_only.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46616D0551700B38811 /* color_only.fsh */; };
+		D5BAD47716D0551700B38811 /* color_only.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46716D0551700B38811 /* color_only.vsh */; };
+		D5BAD47816D0551700B38811 /* particle.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46816D0551700B38811 /* particle.fsh */; };
+		D5BAD47916D0551700B38811 /* particle.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46916D0551700B38811 /* particle.vsh */; };
+		D5BAD47A16D0551700B38811 /* position_only.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46A16D0551700B38811 /* position_only.fsh */; };
+		D5BAD47B16D0551700B38811 /* position_only.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46B16D0551700B38811 /* position_only.vsh */; };
+		D5BAD47C16D0551700B38811 /* single_color.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46C16D0551700B38811 /* single_color.fsh */; };
+		D5BAD47D16D0551700B38811 /* single_color.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46D16D0551700B38811 /* single_color.vsh */; };
+		D5BAD47E16D0551700B38811 /* texture_only.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46E16D0551700B38811 /* texture_only.fsh */; };
+		D5BAD47F16D0551700B38811 /* texture_only.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46F16D0551700B38811 /* texture_only.vsh */; };
+		D5BAD48016D0551700B38811 /* blur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD47016D0551700B38811 /* blur.fsh */; };
+		D5BAD48116D0551700B38811 /* blur.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD47116D0551700B38811 /* blur.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +94,20 @@
 		D5BAD44816D0528900B38811 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SLViewController_iPhone.xib; sourceTree = "<group>"; };
 		D5BAD44B16D0528900B38811 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SLViewController_iPad.xib; sourceTree = "<group>"; };
 		D5BAD45316D0531F00B38811 /* Spiral.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Spiral.xcodeproj; path = ../Submodules/Spiral/Spiral/Spiral.xcodeproj; sourceTree = "<group>"; };
+		D5BAD46416D0551700B38811 /* soft_particle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = soft_particle.fsh; path = ../Shaders/soft_particle.fsh; sourceTree = "<group>"; };
+		D5BAD46516D0551700B38811 /* soft_particle.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = soft_particle.vsh; path = ../Shaders/soft_particle.vsh; sourceTree = "<group>"; };
+		D5BAD46616D0551700B38811 /* color_only.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = color_only.fsh; path = ../Shaders/color_only.fsh; sourceTree = "<group>"; };
+		D5BAD46716D0551700B38811 /* color_only.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = color_only.vsh; path = ../Shaders/color_only.vsh; sourceTree = "<group>"; };
+		D5BAD46816D0551700B38811 /* particle.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = particle.fsh; path = ../Shaders/particle.fsh; sourceTree = "<group>"; };
+		D5BAD46916D0551700B38811 /* particle.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = particle.vsh; path = ../Shaders/particle.vsh; sourceTree = "<group>"; };
+		D5BAD46A16D0551700B38811 /* position_only.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = position_only.fsh; path = ../Shaders/position_only.fsh; sourceTree = "<group>"; };
+		D5BAD46B16D0551700B38811 /* position_only.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = position_only.vsh; path = ../Shaders/position_only.vsh; sourceTree = "<group>"; };
+		D5BAD46C16D0551700B38811 /* single_color.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = single_color.fsh; path = ../Shaders/single_color.fsh; sourceTree = "<group>"; };
+		D5BAD46D16D0551700B38811 /* single_color.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = single_color.vsh; path = ../Shaders/single_color.vsh; sourceTree = "<group>"; };
+		D5BAD46E16D0551700B38811 /* texture_only.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = texture_only.fsh; path = ../Shaders/texture_only.fsh; sourceTree = "<group>"; };
+		D5BAD46F16D0551700B38811 /* texture_only.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = texture_only.vsh; path = ../Shaders/texture_only.vsh; sourceTree = "<group>"; };
+		D5BAD47016D0551700B38811 /* blur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = blur.fsh; path = ../Shaders/blur.fsh; sourceTree = "<group>"; };
+		D5BAD47116D0551700B38811 /* blur.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = blur.vsh; path = ../Shaders/blur.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +190,7 @@
 		D5BAD45216D0530B00B38811 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				D5BAD46316D0550B00B38811 /* Spiral Resources */,
 				D5BAD45316D0531F00B38811 /* Spiral.xcodeproj */,
 			);
 			name = Submodules;
@@ -175,6 +204,45 @@
 				D5BAD45E16D0531F00B38811 /* libSpiral OS X.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D5BAD46316D0550B00B38811 /* Spiral Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D5BAD47316D0551700B38811 /* Spiral Bundle */,
+			);
+			name = "Spiral Resources";
+			sourceTree = "<group>";
+		};
+		D5BAD47216D0551700B38811 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				D5BAD46416D0551700B38811 /* soft_particle.fsh */,
+				D5BAD46516D0551700B38811 /* soft_particle.vsh */,
+				D5BAD46616D0551700B38811 /* color_only.fsh */,
+				D5BAD46716D0551700B38811 /* color_only.vsh */,
+				D5BAD46816D0551700B38811 /* particle.fsh */,
+				D5BAD46916D0551700B38811 /* particle.vsh */,
+				D5BAD46A16D0551700B38811 /* position_only.fsh */,
+				D5BAD46B16D0551700B38811 /* position_only.vsh */,
+				D5BAD46C16D0551700B38811 /* single_color.fsh */,
+				D5BAD46D16D0551700B38811 /* single_color.vsh */,
+				D5BAD46E16D0551700B38811 /* texture_only.fsh */,
+				D5BAD46F16D0551700B38811 /* texture_only.vsh */,
+				D5BAD47016D0551700B38811 /* blur.fsh */,
+				D5BAD47116D0551700B38811 /* blur.vsh */,
+			);
+			name = Shaders;
+			path = Spiral;
+			sourceTree = "<group>";
+		};
+		D5BAD47316D0551700B38811 /* Spiral Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				D5BAD47216D0551700B38811 /* Shaders */,
+			);
+			name = "Spiral Bundle";
+			path = ../Submodules/Spiral/Spiral;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +336,20 @@
 				D5BAD44316D0528900B38811 /* Shader.vsh in Resources */,
 				D5BAD44916D0528900B38811 /* SLViewController_iPhone.xib in Resources */,
 				D5BAD44C16D0528900B38811 /* SLViewController_iPad.xib in Resources */,
+				D5BAD47416D0551700B38811 /* soft_particle.fsh in Resources */,
+				D5BAD47516D0551700B38811 /* soft_particle.vsh in Resources */,
+				D5BAD47616D0551700B38811 /* color_only.fsh in Resources */,
+				D5BAD47716D0551700B38811 /* color_only.vsh in Resources */,
+				D5BAD47816D0551700B38811 /* particle.fsh in Resources */,
+				D5BAD47916D0551700B38811 /* particle.vsh in Resources */,
+				D5BAD47A16D0551700B38811 /* position_only.fsh in Resources */,
+				D5BAD47B16D0551700B38811 /* position_only.vsh in Resources */,
+				D5BAD47C16D0551700B38811 /* single_color.fsh in Resources */,
+				D5BAD47D16D0551700B38811 /* single_color.vsh in Resources */,
+				D5BAD47E16D0551700B38811 /* texture_only.fsh in Resources */,
+				D5BAD47F16D0551700B38811 /* texture_only.vsh in Resources */,
+				D5BAD48016D0551700B38811 /* blur.fsh in Resources */,
+				D5BAD48116D0551700B38811 /* blur.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
