@@ -139,8 +139,10 @@
                                                       -1.0 * translation.y / self.view.bounds.size.height);
     float aspectRatio = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
     CGPoint aspectRatioNormalizedTranslationInView = CGPointMake(normalizedTranslationInView.x * aspectRatio, normalizedTranslationInView.y);
-    self.world.currentViewportCenter = GLKVector2Add(self.world.currentViewportCenter,
-                                                     GLKVector2Make(aspectRatioNormalizedTranslationInView.x, aspectRatioNormalizedTranslationInView.y));
+    GLKVector2 translationVector = GLKVector2Make(aspectRatioNormalizedTranslationInView.x, aspectRatioNormalizedTranslationInView.y);
+    GLKVector2 zoomAdjustedTranslation = GLKVector2DivideScalar(translationVector, self.world.currentViewportZoom);
+    self.world.currentViewportCenter = GLKVector2Add(self.world.currentViewportCenter, zoomAdjustedTranslation);
+    NSLog(@"New center: %@", NSStringFromGLKVector2(self.world.currentViewportCenter));
     [gestureRecognizer setTranslation:CGPointZero inView:self.view];
 }
 

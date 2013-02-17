@@ -34,12 +34,24 @@
     return self;
 }
 
+- (void)setCurrentViewportCenter:(GLKVector2)currentViewportCenter
+{
+    _currentViewportCenter = GLKVector2Maximum(GLKVector2MultiplyScalar(self.size, -0.3),
+                                               GLKVector2Minimum(GLKVector2MultiplyScalar(self.size, 0.3),
+                                                                 currentViewportCenter));
+}
+
+- (void)setCurrentViewportZoom:(float)currentViewportZoom
+{
+    _currentViewportZoom = MAX(0.02, MIN(0.1, currentViewportZoom));
+}
+
 - (GLKVector2)locationInWorldForNormalizedScreenPoint:(CGPoint)normalizedScreenPoint aspectRatio:(float)aspectRatio
 {
     float viewportDimension = 2.0 / self.currentViewportZoom;
     GLKVector2 viewportSize = GLKVector2Make(viewportDimension * aspectRatio, viewportDimension);
     GLKVector2 centeredTouchLocationInViewport = GLKVector2Multiply(GLKVector2SubtractScalar(GLKVector2Make(normalizedScreenPoint.x, normalizedScreenPoint.y),  0.5), viewportSize);
-    GLKVector2 touchLocationInWorld = GLKVector2Subtract(centeredTouchLocationInViewport, GLKVector2DivideScalar(self.currentViewportCenter, self.currentViewportZoom));
+    GLKVector2 touchLocationInWorld = GLKVector2Subtract(centeredTouchLocationInViewport, self.currentViewportCenter);
     return touchLocationInWorld;
 }
 
@@ -60,14 +72,14 @@
 - (void)render
 {
     GLKMatrix4 modelViewMatrix = GLKMatrix4Identity;
-    modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, self.currentViewportCenter.x, self.currentViewportCenter.y, 0.0);
     modelViewMatrix = GLKMatrix4Scale(modelViewMatrix, self.currentViewportZoom, self.currentViewportZoom, 1.0);
+    modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, self.currentViewportCenter.x, self.currentViewportCenter.y, 0.0);
     [SPEffectsManager sharedEffectsManager].modelViewMatrix = modelViewMatrix;
     
     GLKMatrix4 worldBackgroundModelViewMatrix = GLKMatrix4Scale(modelViewMatrix, self.size.x, self.size.y, 1.0);
-    [SPGeometricPrimitives drawQuadWithColor:GLKVector4Make(0.25, 0.25, 0.25, 1.0) andModelViewMatrix:worldBackgroundModelViewMatrix];
+    [SPGeometricPrimitives drawQuadWithColor:GLKVector4Make(1, 1, 1, 1) andModelViewMatrix:worldBackgroundModelViewMatrix];
     
-    [SPGeometricPrimitives drawCircleWithColor:GLKVector4Make(1, 1, 1, 1) andModelViewMatrix:modelViewMatrix];
+    [SPGeometricPrimitives drawCircleWithColor:GLKVector4Make(0.15, 0.15, 0.15, 1) andModelViewMatrix:modelViewMatrix];
     
     for (SLSlimer *slimer in self.slimers)
     {
