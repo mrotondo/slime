@@ -176,10 +176,6 @@
     glClearColor(0.25f, 0.25f, 0.25f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-//    GLKMatrix4 modelViewMatrix = GLKMatrix4Identity;
-//    modelViewMatrix = GLKMatrix4Scale(modelViewMatrix, 0.2, 0.2, 1.0);
-//    [SPGeometricPrimitives drawCircleWithColor:GLKVector4Make(1.0, 0.5, 0.0, 1.0) andModelViewMatrix:modelViewMatrix];
-    
     [self.world render];
 }
 
