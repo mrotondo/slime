@@ -38,6 +38,9 @@
 		D5BAD47F16D0551700B38811 /* texture_only.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD46F16D0551700B38811 /* texture_only.vsh */; };
 		D5BAD48016D0551700B38811 /* blur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD47016D0551700B38811 /* blur.fsh */; };
 		D5BAD48116D0551700B38811 /* blur.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D5BAD47116D0551700B38811 /* blur.vsh */; };
+		D5BAD48416D0590500B38811 /* SLSlimeWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD48316D0590500B38811 /* SLSlimeWorld.m */; };
+		D5BAD48716D05A2C00B38811 /* SLSlimerCreationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD48616D05A2C00B38811 /* SLSlimerCreationGestureRecognizer.m */; };
+		D5BAD49216D06C2600B38811 /* SLSlimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D5BAD49116D06C2600B38811 /* SLSlimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,12 @@
 		D5BAD46F16D0551700B38811 /* texture_only.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = texture_only.vsh; path = ../Shaders/texture_only.vsh; sourceTree = "<group>"; };
 		D5BAD47016D0551700B38811 /* blur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = blur.fsh; path = ../Shaders/blur.fsh; sourceTree = "<group>"; };
 		D5BAD47116D0551700B38811 /* blur.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = blur.vsh; path = ../Shaders/blur.vsh; sourceTree = "<group>"; };
+		D5BAD48216D0590500B38811 /* SLSlimeWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLSlimeWorld.h; sourceTree = "<group>"; };
+		D5BAD48316D0590500B38811 /* SLSlimeWorld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLSlimeWorld.m; sourceTree = "<group>"; };
+		D5BAD48516D05A2C00B38811 /* SLSlimerCreationGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLSlimerCreationGestureRecognizer.h; sourceTree = "<group>"; };
+		D5BAD48616D05A2C00B38811 /* SLSlimerCreationGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLSlimerCreationGestureRecognizer.m; sourceTree = "<group>"; };
+		D5BAD49016D06C2600B38811 /* SLSlimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLSlimer.h; sourceTree = "<group>"; };
+		D5BAD49116D06C2600B38811 /* SLSlimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLSlimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +178,12 @@
 				D5BAD44716D0528900B38811 /* SLViewController_iPhone.xib */,
 				D5BAD44A16D0528900B38811 /* SLViewController_iPad.xib */,
 				D5BAD42F16D0528900B38811 /* Supporting Files */,
+				D5BAD48216D0590500B38811 /* SLSlimeWorld.h */,
+				D5BAD48316D0590500B38811 /* SLSlimeWorld.m */,
+				D5BAD48516D05A2C00B38811 /* SLSlimerCreationGestureRecognizer.h */,
+				D5BAD48616D05A2C00B38811 /* SLSlimerCreationGestureRecognizer.m */,
+				D5BAD49016D06C2600B38811 /* SLSlimer.h */,
+				D5BAD49116D06C2600B38811 /* SLSlimer.m */,
 			);
 			path = Slime;
 			sourceTree = "<group>";
@@ -363,6 +378,9 @@
 				D5BAD43516D0528900B38811 /* main.m in Sources */,
 				D5BAD43916D0528900B38811 /* SLAppDelegate.m in Sources */,
 				D5BAD44616D0528900B38811 /* SLViewController.m in Sources */,
+				D5BAD48416D0590500B38811 /* SLSlimeWorld.m in Sources */,
+				D5BAD48716D05A2C00B38811 /* SLSlimerCreationGestureRecognizer.m in Sources */,
+				D5BAD49216D06C2600B38811 /* SLSlimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
