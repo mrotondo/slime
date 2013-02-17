@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
 
+@class SLSlimeWorld;
+
 @interface SLSlimer : NSObject
+
+@property (nonatomic, strong) SLSlimeWorld *world;
 
 - (void)addRearPoint:(GLKVector2)rearPoint;
 - (void)addFrontPoint:(GLKVector2)frontPoint;

@@ -28,6 +28,8 @@
         self.currentViewportZoom = 0.1;
 
         self.slimers = [NSMutableSet set];
+        
+        self.size = GLKVector2Make(100, 100);
     }
     return self;
 }
@@ -45,6 +47,7 @@
 {
     self.currentSlimer = [[SLSlimer alloc] init];
     [self.currentSlimer addRearPoint:worldPoint];
+    self.currentSlimer.world = self;
     [self.slimers addObject:self.currentSlimer];
 }
 
@@ -60,6 +63,9 @@
     modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, self.currentViewportCenter.x, self.currentViewportCenter.y, 0.0);
     modelViewMatrix = GLKMatrix4Scale(modelViewMatrix, self.currentViewportZoom, self.currentViewportZoom, 1.0);
     [SPEffectsManager sharedEffectsManager].modelViewMatrix = modelViewMatrix;
+    
+    GLKMatrix4 worldBackgroundModelViewMatrix = GLKMatrix4Scale(modelViewMatrix, self.size.x, self.size.y, 1.0);
+    [SPGeometricPrimitives drawQuadWithColor:GLKVector4Make(0.25, 0.25, 0.25, 1.0) andModelViewMatrix:worldBackgroundModelViewMatrix];
     
     [SPGeometricPrimitives drawCircleWithColor:GLKVector4Make(1, 1, 1, 1) andModelViewMatrix:modelViewMatrix];
     
