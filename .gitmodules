@@ -1,3 +1,6 @@
 [submodule "Submodules/Spiral"]
 	path = Submodules/Spiral
 	url = git@github.com:mrotondo/Spiral.git
+[submodule "Submodules/pd-for-iOS"]
+	path = Submodules/pd-for-iOS
+	url = git://github.com/libpd/pd-for-ios.git
